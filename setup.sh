@@ -6,13 +6,14 @@ REMOTEPASSWORD=xxxxx
 
 echo Jetson Nano Setup
 
-sudo apt-get update
-sudo apt-get --assume-yes install samba
-Y
+apt-get update
+apt-get --assume-yes install samba
 
-sudo smbpasswd -a $PRIMARYUSER -w $REMOTEPASSWORD
+(echo $REMOTEPASSWORD; echo $REMOTEPASSWORD) | smbpasswd -a -s $PRIMARYUSER
 
-sudo cp /etc/samba/smb.conf /etc/samba/smb.confBACKUP
+cp /etc/samba/smb.confBACKUP /etc/samba/smb.conf 
+cp /etc/samba/smb.conf /etc/samba/smb.confBACKUP
 
-#copy config file addition
+cat smb.conf_map_team_dir >> /etc/samba/smb.conf
+
 sudo service smbd restart
