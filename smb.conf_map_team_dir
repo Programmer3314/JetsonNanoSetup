@@ -1,0 +1,4 @@
+[<teamnumber>]
+path = /<teamnumber>
+valid users = <primaryuser>
+read only = no
