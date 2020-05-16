@@ -15,3 +15,5 @@ sed -i "s/<teamnumber>/$TEAMNUMBER/g" $SCRIPTHOME/data/smb.conf_map_team_dir_upd
 sed -i "s/<primaryuser>/$PRIMARYUSER/g" $SCRIPTHOME/data/smb.conf_map_team_dir_updated
 cat $SCRIPTHOME/data/smb.conf_map_team_dir_updated >> /etc/samba/smb.conf
 service smbd restart
+echo End of Samba Network setup
+read -p "Press any key to continue..."
