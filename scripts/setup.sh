@@ -6,6 +6,8 @@ echo
 echo Jetson Nano Setup
 echo
 
+sudo chown -R $PRIMARYUSER ~/JetsonNanoSetup
+
 echo
 echo Add Swapfile
 echo
@@ -33,14 +35,13 @@ echo
 source samba_setup.sh
 
 echo
-echo Setup virtual environment tensorflow_gpu
+echo TODO: Setup virtual environment tensorflow_gpu
 echo 
-cd ~/
-sudo apt-get --assume-yes install virtualenv
-python3 -m virtualenv -p python3 tensorflow_gpu
-source ~/tensorflow_gpu/bin/activate
-read -p "Press a key..."
-
+# cd ~/
+# sudo apt-get --assume-yes install virtualenv
+# python3 -m virtualenv -p python3 tensorflow_gpu
+# source ~/tensorflow_gpu/bin/activate
+# read -p "Press a key..."
 
 echo
 echo Setup TensorFlow
@@ -57,7 +58,8 @@ read -p "Press a key..."
 echo
 echo Setup TensorFlow Object Detection API
 echo
-#cd ..
-#git clone https://github.com/tensorflow/models.git
+cd /$DATAHOME
+sudo git clone https://github.com/tensorflow/models.git
+read -p "Press a key..."
 
 #mv ./JetsonNanoSetup/objectdetectiontools ./
