@@ -6,6 +6,7 @@ echo
 echo Setup Samba Network Access to Team Directory
 echo
 apt-get update
+cd /$TEAMNUMBER
 apt-get --assume-yes install samba
 (echo $REMOTEPASSWORD; echo $REMOTEPASSWORD) | smbpasswd -a -s $PRIMARYUSER
 cp /etc/samba/smb.confBACKUP /etc/samba/smb.conf 
