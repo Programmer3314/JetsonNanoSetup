@@ -9,7 +9,7 @@ echo
 echo
 echo Setup Samba Network Access to Team Directory
 echo
-sudo samba_setup.sh
+source samba_setup.sh
 
 echo
 echo Setup virtual environment tensorflow_gpu
