@@ -32,6 +32,7 @@ sudo chown -R $PRIMARYUSER $SCRIPTROOT
 echo
 echo Setup Samba Network Access to Team Directory
 echo
+cd $SCRIPTHOME
 source samba_setup.sh
 
 echo
