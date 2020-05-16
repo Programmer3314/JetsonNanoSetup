@@ -22,12 +22,12 @@ read -p "End create swap file..."
 
 echo
 echo Make dataroot directory and rights
-sudo mdkir /$DATAHOME
+sudo mkdir /$DATAHOME
+sudo mkdir /$DATAHOME/workspace
+
 cd $DATAHOME
 sudo chown -R $PRIMARYUSER /$DATAHOME
 sudo chown -R $PRIMARYUSER $SCRIPTROOT
-
-
 
 echo
 echo Setup Samba Network Access to Team Directory
