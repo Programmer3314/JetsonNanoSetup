@@ -7,6 +7,17 @@ echo Jetson Nano Setup
 echo
 
 echo
+echo Add Swapfile
+echo
+sudo fallocate -l 4G /var/swapfile
+sudo chmod 600 /var/swapfile
+sudo mkswap /var/swapfile
+sudo swapon /var/swapfile
+sudo bash -c 'echo "/var/swapfile swap swap defaults 0 0" >> /etc/fstab'
+free -h
+read -p "End create swap file..."
+
+echo
 echo Setup Samba Network Access to Team Directory
 echo
 source samba_setup.sh
