@@ -1,4 +1,4 @@
-DATAROOT=Vision
+DATAHOME=Vision
 PRIMARYUSER=rich
 REMOTEPASSWORD=xxxxx
 SETUPHOME=~/JetsonNanoSetup
