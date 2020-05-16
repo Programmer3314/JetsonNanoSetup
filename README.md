@@ -2,7 +2,7 @@
 setup scripts for Jetson Nano
 
 Develop setup scripts to rebuild Nano from a new image
-Image: nv-jetson-nano-sd-card-image-r32.4.2.zip
+Image: nv-jetson-nano-sd-card-image-r32.2.3.zip
 Flash image with balenaEtcher.
 
 On startup:
