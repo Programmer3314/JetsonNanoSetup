@@ -1,11 +1,6 @@
 #!/bin/bash
 
-PRIMARYUSER=rich
-TEAMNUMBER=3314
-REMOTEPASSWORD=xxxxx
-
-SETUPHOME=/$TEAMNUMBER/JetsonNanoSetup
-SCRIPTHOME=$SETUPHOME/scripts
+source parameters.sh
 
 echo
 echo Setup Samba Network Access to Team Directory
