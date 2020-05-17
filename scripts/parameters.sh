@@ -1,4 +1,4 @@
-DATAHOME=Vision
+DATAHOME=vision
 PRIMARYUSER=rich
 REMOTEPASSWORD=xxxxx
 SETUPHOME=~/JetsonNanoSetup
