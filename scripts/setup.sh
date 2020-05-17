@@ -48,7 +48,11 @@ echo
 echo Setup TensorFlow
 echo 
 cd ~/
-source ~/tensorflow_gpu/bin/activate
+# CUDA related exports
+export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+# source ~/tensorflow_gpu/bin/activate
 sudo apt-get --assume-yes install libhdf5-serial-dev hdf5-tools libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev libblas-dev gfortran
 sudo apt-get --assume-yes install python3-pip
 sudo pip3 install -U pip testresources setuptools
@@ -59,8 +63,21 @@ read -p "Press a key..."
 echo
 echo Setup TensorFlow Object Detection API
 echo
+cd ~/
+sudo apt install libxml2
+sudo apt install libxslt-dev
+sudo apt-get install python-matplotlib
+sudo pip install cython
+sudo pip install pillow==6.2.1 
+sudo pip install lxml==4.4.1 
+sudo pip install jupyter==1.0.0 pathlib==1.0.1
 cd /$DATAHOME
-sudo git clone https://github.com/tensorflow/models.git
+sudo git clone -b r1.13.0 https://github.com/tensorflow/models.git
+sudo chown -R $PRIMARYUSER /$DATAHOME
+cd /$DATAHOME/models/research
+sudo pip install .
+# From within tensorflow/models/research/
+sudo export PYTHONPATH=$PYTHONPATH:/$DATAHOME/models/research:/$DATAHOME/models/research/slim
 read -p "Press a key..."
 
 #mv ./JetsonNanoSetup/objectdetectiontools ./
